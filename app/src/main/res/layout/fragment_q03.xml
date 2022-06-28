@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Q3" >
+
+    <data>
+        <variable
+            name = "viewModel"
+            type = "com.example.perfil_investidor.model.QuizViewModel" />
+        <variable
+            name = "Q3"
+            type = "com.example.perfil_investidor.Q3" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_q3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="21dp"
+            android:text="@string/quiz_03"
+            android:textAlignment="textStart"
+            android:textColor="#00BCD4"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/q3_a1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <RadioButton
+            android:id="@+id/q3_a1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="12dp"
+            android:checked="@{viewModel.q3.equals(0)}"
+            android:onClick="@{() -> viewModel.q3Points(0)}"
+            android:text="@string/quiz_03_a"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/q3_a2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_q3" />
+
+        <RadioButton
+            android:id="@+id/q3_a2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="12dp"
+            android:checked="@{viewModel.q3.equals(1)}"
+            android:onClick="@{() -> viewModel.q3Points(1)}"
+            android:text="@string/quiz_03_b"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/q3_a3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/q3_a1" />
+
+        <RadioButton
+            android:id="@+id/q3_a3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="12dp"
+            android:checked="@{viewModel.q3.equals(2)}"
+            android:onClick="@{() -> viewModel.q3Points(2)}"
+            android:text="@string/quiz_03_c"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/q3_a4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/q3_a2" />
+
+        <RadioButton
+            android:id="@+id/q3_a4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="40dp"
+            android:checked="@{viewModel.q3.equals(4)}"
+            android:onClick="@{() -> viewModel.q3Points(4)}"
+            android:text="@string/quiz_03_d"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_q3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/q3_a3" />
+
+
+        <Button
+            android:id="@+id/btn_q3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="227dp"
+            android:backgroundTint="#373533"
+            android:onClick="@{() -> Q3.nextQuestion()}"
+            android:text="@string/quiz_next_btn"
+            android:textColor="#00BCD4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/q3_a4" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

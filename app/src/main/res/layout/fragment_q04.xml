@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Q4" >
+
+    <data>
+        <variable
+            name = "viewModel"
+            type = "com.example.perfil_investidor.model.QuizViewModel" />
+        <variable
+            name = "Q4"
+            type = "com.example.perfil_investidor.Q4" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_q4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="40dp"
+            android:text="@string/quiz_04"
+            android:textAlignment="textStart"
+            android:textColor="#00BCD4"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/radio_group4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp">
+
+            <RadioButton
+                android:id="@+id/q04_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:checked="@{viewModel.q4.equals(0)}"
+                android:onClick="@{() -> viewModel.q4Points(0)}"
+                android:text="@string/quiz_04_a"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/q04_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:checked="@{viewModel.q4.equals(2)}"
+                android:onClick="@{() -> viewModel.q4Points(2)}"
+                android:text="@string/quiz_04_b"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/q04_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:checked="@{viewModel.q4.equals(4)}"
+                android:onClick="@{() -> viewModel.q4Points(4)}"
+                android:text="@string/quiz_04_c"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_q4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="40dp"
+            android:backgroundTint="#373533"
+            android:onClick="@{() -> Q4.nextQuestion()}"
+            android:text="@string/quiz_next_btn"
+            android:textColor="#00BCD4" />
+    </LinearLayout>
+
+</layout>

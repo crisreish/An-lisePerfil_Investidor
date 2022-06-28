@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Q9">
+
+    <data>
+        <variable
+            name = "viewModel"
+            type = "com.example.perfil_investidor.model.QuizViewModel" />
+        <variable
+            name = "Q9"
+            type = "com.example.perfil_investidor.Q9" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_q9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="40dp"
+            android:text="@string/quiz_09"
+            android:textAlignment="textStart"
+            android:textColor="#00BCD4"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/radio_group9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp">
+
+            <RadioButton
+                android:id="@+id/q09_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:checked="@{viewModel.q9.equals(0)}"
+                android:onClick="@{() -> viewModel.q9Points(0)}"
+                android:text="@string/quiz_09_a"
+                android:textColor="#FCFFFFFF"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/q09_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:checked="@{viewModel.q9.equals(1)}"
+                android:onClick="@{() -> viewModel.q9Points(1)}"
+                android:text="@string/quiz_09_b"
+                android:textColor="#FCFFFFFF"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/q09_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:checked="@{viewModel.q9.equals(2)}"
+                android:onClick="@{() -> viewModel.q9Points(2)}"
+                android:text="@string/quiz_09_c"
+                android:textColor="#FCFFFFFF"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/q09_d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:checked="@{viewModel.q9.equals(4)}"
+                android:onClick="@{() -> viewModel.q9Points(4)}"
+                android:text="@string/quiz_09_d"
+                android:textColor="#FCFFFFFF"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/q09_e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.q9.equals(5)}"
+                android:onClick="@{() -> viewModel.q9Points(5)}"
+                android:text="@string/quiz_09_e"
+                android:textColor="#FCFFFFFF"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_q9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="40dp"
+            android:backgroundTint="#373533"
+            android:onClick="@{() -> Q9.finishQuiz()}"
+            android:text="@string/quiz_finish_btn"
+            android:textColor="#00BCD4" />
+    </LinearLayout>
+</layout>
